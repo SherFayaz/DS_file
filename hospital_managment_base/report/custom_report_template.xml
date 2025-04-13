@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="custom_report_id">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.html_container">
+                <t t-call="hospital_managment_base.custom_sale_report_layout">
+                    <div class="page">
+                        <div class="row">
+                            <div class="col-3">
+                                <p style="margin:0">Sample Company Inc.</p>
+                                <p style="margin:0">Their Address</p>
+                                <p style="margin:0">Any City, Prov/State</p>
+                                <p style="margin:0">Postal Code, Country</p>
+                            </div>
+
+                            <div class="col-6 text-end">
+                                <span style="padding-right:15px">
+                                    <strong>Invoice</strong>
+                                </span>
+                                <br/>
+                                <span>Invoice no</span>
+                            </div>
+
+                            <div class="col-2 text-end mt-4">
+                                <span>
+                                    <strong>100293</strong>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-8">
+                            </div>
+                            <div class="col-2">
+                                <p style="margin:0">customer no</p>
+                                <p style="margin:0">customer</p>
+                                <p style="margin:0">date</p>
+                                <p style="margin:0">page</p>
+                            </div>
+                            <div class="col-2">
+                                <p style="margin:0">12834 VAT ID</p>
+                                <p style="margin:0">3948795839</p>
+                                <p style="margin:0">30 10 2025</p>
+                                <p style="margin:0">1 of 2</p>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col-8">
+                            </div>
+
+                            <div class="col-4 mt-4">
+                                <p style="margin:0">your customer no</p>
+                                <p style="margin:0">abcdj</p>
+                                <p style="margin:0">09874598476</p>
+                                <p style="margin:0">email@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col-4 ">
+                                <span><strong>Shipping Address</strong></span>
+                                <p style="margin:0">Alphecca school</p>
+                                <p style="margin:0"> address</p>
+                                <p style="margin:0">address</p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col-max">
+                                <p>Dear Sir or Ma'am</p>
+                                <p>Thank you very much for your trust. We will charge you for the following items</p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2" style="border-top: 1.8px solid black;"></div>
+
+                        <div class="row">
+                            <div class="col-4 mt-3">
+                                <span><strong>Your information</strong></span>
+                                <p>Reference</p>
+                            </div>
+                            <div class="col-3 mt-5">
+                                <span>9799765083</span>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                 <p>Date</p>
+                            </div>
+                           <div class="col-6 text-end">
+                               <span>contact kriby, Lesite</span>
+                           </div>
+                        </div>
+
+                        <div class="row mt-1" style="border-top:1.8px solid black;"></div>
+
+                        <div class="row mt-2">
+                            <div class="col-1">
+                                <span style="mt-2">POS.</span>
+                            </div>
+                            <div class="col-2">
+                                <span><strong>Part numbers</strong></span>
+                                <span>Description</span>
+                            </div>
+                            <div class="col-2"></div>
+                            <div class="col-2">
+                                <span>Quantity Unit</span>
+                            </div>
+                            <div class="col-2">
+                                <span>Net Price US</span>
+                            </div>
+                            <div class="col-2"><span>Discount %</span></div>
+                            <div class="col-1"><span>Amount US</span></div>
+                        </div>
+
+
+
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

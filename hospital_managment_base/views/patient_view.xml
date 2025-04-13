@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- this is a patient form -->
+        <record id="kgn_hospital_patient_form_view" model="ir.ui.view">
+            <field name="name">kgn hospital patient from</field>
+            <field name="model">galaxy.patient</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe-title">
+                            <h1>
+                                <field name="sequences"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="p_name"/>
+                                <field name="p_dob"/>
+                                <field name="p_age"/>
+                                <field name="p_gender"/>
+                                <field name="p_contact"/>
+                                <field name="p_email"/>
+                                <field name="p_merital_status"/>
+                            </group>
+                            <group>
+                                <field name="p_bp"/>
+                                <field name="p_med"/>
+                                <field name="p_A_date"/>
+                                <field name="P_d_date"/>
+                                <field name="p_status"/>
+                                <field name="p_deptt"/>
+                                <field name="doctor_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--  this is a kgn hospital patient tree view-->
+        <record id="kgn_hospital_patient_tree_view" model="ir.ui.view">
+            <field name="name">kgn hospital patient tree</field>
+            <field name="model">galaxy.patient</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="p_name"/>
+                    <field name="p_dob"/>
+                    <field name="p_age"/>
+                    <field name="p_gender"/>
+                    <field name="p_contact"/>
+                    <field name="p_email"/>
+                    <field name="p_merital_status"/>
+                    <field name="p_bp"/>
+                    <field name="p_med"/>
+                    <field name="p_A_date"/>
+                    <field name="P_d_date"/>
+                    <field name="p_status"/>
+                    <field name="p_deptt"/>
+                    <field name="doctor_id"/>
+
+                </tree>
+            </field>
+        </record>
+        <!--  this is a kgn hospital action-->
+        <record id="kgn_hospital_patient_action_id" model="ir.actions.act_window">
+            <field name="name">Hospital patient action</field>
+            <field name="res_model">galaxy.patient</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- this is hospital and patient menu -->
+
+        <menuitem id="menu_hospital_sub_2_id" name="Patient" parent="menu_hospital_root_1_id"
+                  action="kgn_hospital_patient_action_id" sequence="3"/>
+    </data>
+</odoo>

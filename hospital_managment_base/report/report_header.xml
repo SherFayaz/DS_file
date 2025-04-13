@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="custom_sale_report_layout">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+        <div class="header">
+            <div class="text-center" style="report_header_style ;">
+                <div class="row">
+                    <div class="col-12 mb4 text-end">
+                        <img alt="img" t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                             style="max-height:90px;"/>
+                    </div>
+                    <!-- <div></div>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="article o_report_layout_standard">
+            <t t-out="0"/>
+        </div>
+
+        <div class="footer o_standard_footer">
+            <div class="row text-center" style="border-top:1px solid black;">
+                <div class="col-4">
+                    <span t-field="company.email"/>
+                </div>
+                <div class="col-4">
+                    <span t-field="company.phone"/>
+                    <br/>
+                    <span t-field="company.mobile"/>
+                </div>
+                <div class="col-4">
+                    <span t-field="company.website"/>
+                </div>
+                <!--<ul class="list-inline mb4">
+                <span t-field="company.report_footer"/>
+                </ul>-->
+            </div>
+            <div class="row text-center">
+                <p class="mt32">Page:
+                    <span class="page"/>
+                    /
+                    <span class="topage"/>
+                </p>
+            </div>
+            <div class="row text-end">
+                <p t-out="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%y %H:%M')"/>
+            </div>
+        </div>
+    </template>
+
+</odoo>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="kgn_hospital_form_view" model="ir.ui.view">
+            <field name="name">kgn hospital from</field>
+            <field name="model">galaxy.doctor</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <header>
+                            <button string="orm_methods" name="orm_methods" type="object"
+                                    class="oe_highlight"/>
+                        </header>
+                        <div class="oe-title">
+                            <h1>
+                                <field name="sequences"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="dr_name"/>
+                                <field name="dr_gender"/>
+                                <field name="dr_contact"/>
+                                <field name="dr_address"/>
+                                <field name="dr_specialization"/>
+                                <field name="dr_qualification"/>
+                                <field name="dr_expr"/>
+                                <field name="working_hr"/>
+                                <field name="fee_per_hour"/>
+                                <field name="total_over_time"/>
+                            </group>
+                            <group>
+                                <field name="dr_designation"/>
+                                <field name="dr_department"/>
+                                <field name="dr_availabity"/>
+                                <field name="dr_fees"/>
+                                <field name="medicine_fee"/>
+                                <field name="total_fee"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--  this is a kgn hospital tree view-->
+        <record id="kgn_hospital_tree_view" model="ir.ui.view">
+            <field name="name">kgn hospital tree</field>
+            <field name="model">galaxy.doctor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dr_name" optional="show"/>
+                    <field name="dr_gender" optional="show"/>
+                    <field name="dr_contact" optional="show"/>
+                    <field name="dr_address" optional="show"/>
+                    <field name="dr_specialization" optional="show"/>
+                    <field name="dr_qualification" optional="show"/>
+                    <field name="dr_expr" optional="show"/>
+                    <field name="dr_designation" optional="show"/>
+                    <field name="dr_department" optional="show"/>
+                    <field name="dr_availabity" optional="show"/>
+                    <field name="dr_fees" optional="show"/>
+                    <field name="medicine_fee" optional="show"/>
+                    <field name="total_fee" optional="show"/>
+                    <field name="working_hr" optional="show"/>
+                    <field name="fee_per_hour" optional="show"/>
+                    <field name="total_over_time" optional="show"/>
+                </tree>
+            </field>
+        </record>
+        <!--  this is a kgn hospital action-->
+        <record id="kgn_hospital_action_id" model="ir.actions.act_window">
+            <field name="name">Hospital doctor action</field>
+            <field name="res_model">galaxy.doctor</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- this is hospital and doctor menu -->
+        <menuitem id="menu_hospital_root_1_id" name="KGN Hospital" sequence="1"/>
+        <menuitem id="menu_hospital_sub_1_id" name="Doctor" parent="menu_hospital_root_1_id"
+                  action="kgn_hospital_action_id" sequence="2"/>
+
+<!--        <record id="action_for_checking_company" model="ir.actions.server">-->
+<!--            <field name="name">Company checking</field>-->
+<!--            <field name="model_id" ref="hospital_managment_base.model_galaxy_doctor"/>-->
+<!--            <field name="binding_model_id" ref="hospital_managment_base.model_galaxy_doctor"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">-->
+<!--                if 'dr_fees' >= 2:-->
+<!--                print('high')-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>
