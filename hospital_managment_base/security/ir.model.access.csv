@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_galaxy_doctor_id,galaxy.doctor.name,model_galaxy_doctor,base.group_user,1,1,1,1
-access_galaxy_patient_id,galaxy.patient.name,model_galaxy_patient,base.group_user,1,1,1,1
-access_galaxy_department_id,galaxy.department.name,model_galaxy_department,base.group_user,1,1,1,1
